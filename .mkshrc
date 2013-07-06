@@ -1,0 +1,91 @@
+##########################################
+#  GENERAL  ##############################
+##########################################
+
+umask 022
+
+# include local ~/bin dir to PATH
+export PATH="~/bin:/usr/local/bin:$PATH"
+
+# If not running interactively, don't do anything
+[ -z "$PS1" ] && return
+
+# Language
+#export LANG="de_DE.UTF-8"
+#export LC_ALL="de_DE.UTF-8"
+
+# History
+export HISTFILE=$HOME/.mksh_history
+export HISTSIZE=4200
+
+# Key bindings
+bind '[P=delete-char-forward' # Fix delete key
+bind '=clear-screen'          # Clear the screen with <C-l>
+
+
+
+##########################################
+#  PROMPT  ###############################
+##########################################
+
+PS1='$(slcp)'
+
+
+
+##########################################
+#  PROGRAM SETTINGS  #####################
+##########################################
+
+export EDITOR=vim
+export SVN_EDITOR=vim
+
+#use vim as epic man pager
+export MANPAGER="/bin/sh -c \"col -b -x | vim -c 'setlocal ft=man nomod nolist nonu noma' -c 'map <buffer> q :q<CR>' -c 'map <buffer> d <C-D>' -c 'map <buffer> u <C-U>' -\""
+
+
+
+##########################################
+#  ALIASES  ##############################
+##########################################
+
+# enable color support of ls and also add handy aliases
+COLOUR=""
+if [ -x /usr/bin/dircolors ]; then
+	[ -r ~/.dircolors ] && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+	COLOUR=" --color=auto"
+fi
+
+# one letter aliases
+alias c="cd"
+alias e="echo"
+alias f="feh"
+alias g="git"
+alias k="make"
+alias l="ls -laBhF$COLOUR"
+alias m="mplayer"
+alias s="ssh"
+alias t="tmux"
+alias v="vim"
+alias y="youtube-dl"
+
+# common argument combinations
+alias ga="git add"
+alias gc="git commit"
+alias gd="git diff"
+alias go="git checkout"
+alias gp="git push"
+alias gs="git status"
+alias gt="git treelog"
+alias la="ls -laF$COLOUR"
+alias ll="ls -lBhF$COLOUR"
+alias lnew="ls -AlhtrF$COLOUR"
+alias lsize="ls -laBhFrS$COLOUR"
+#alias ls="ls$COLOUR"
+alias suckfiles="git --git-dir=$HOME/code/suckfiles/.git --work-tree=$HOME"
+
+alias egrep="egrep$COLOUR"
+alias fgrep="fgrep$COLOUR"
+alias grep="grep$COLOUR"
+
+alias nano="beep -f 349.2 -l 125 --new -f 392 -l 125 --new -f 466.2 -l 125 --new -f 392 -l 125 --new -f 554.4 -l 300 -D 75 --new -f 554.4 -l 300 -D 75 --new -f 523.2 -l 700 -D 50 --new -f 349.2 -l 125 --new -f 392 -l 125 --new -f 466.2 -l 125 --new -f 392 -l 125 --new -f 523.2 -l 300 -D 75 --new -f 523.2 -l 300 -D 75 --new -f 466.2 -l 375 --new -f 440 -l 100 --new -f 392 -l 200 -D 75 --new -f 349.2 -l 125 --new -f 392 -l 125 --new -f 466.2 -l 125 --new -f 392 -l 125 --new -f 466.2 -l 450 -D 50 --new -f 523.2 -l 250 --new -f 440 -l 375 --new -f 392 -l 100 -D 25 --new -f 349.2 -l 450 -D 50 --new -f 349.2 -l 250 --new -f 523.2 -l 450 -D 50 --new -f 466.2 -l 1000 --new -f 349.2 -l 125 --new -f 392 -l 125 --new -f 466.2 -l 125 --new -f 392 -l 125 --new -f 554.4 -l 300 -D 75 --new -f 554.4 -l 300 -D 75 --new -f 523.2 -l 700 -D 50 --new -f 349.2 -l 125 --new -f 392 -l 125 --new -f 466.2 -l 125 --new -f 392 -l 125 --new -f 698.4 -l 450 -D 50 --new -f 440 -l 250 --new -f 466.2 -l 375 --new -f 440 -l 100 --new -f 392 -l 200 -D 75 --new -f 349.2 -l 125 --new -f 392 -l 125 --new -f 466.2 -l 125 --new -f 392 -l 125 --new -f 466.2 -l 450 -D 50 --new -f 523.2 -l 250 --new -f 440 -l 375 --new -f 392 -l 100 -D 25 --new -f 349.2 -l 450 -D 50 --new -f 349.2 -l 250 --new -f 523.2 -l 450 -D 50 --new -f 466.2 -l 1000 &"
+alias imperial_march="beep -l 350 -f 392 -D 100 --new -l 350 -f 392 -D 100 --new -l 350 -f 392 -D 100 --new -l 250 -f 311.1 -D 100 --new -l 25 -f 466.2 -D 100 --new -l 350 -f 392 -D 100 --new -l 250 -f 311.1 -D 100 --new -l 25 -f 466.2 -D 100 --new -l 700 -f 392 -D 100 --new -l 350 -f 587.32 -D 100 --new -l 350 -f 587.32 -D 100 --new -l 350 -f 587.32 -D 100 --new -l 250 -f 622.26 -D 100 --new -l 25 -f 466.2 -D 100 --new -l 350 -f 369.99 -D 100 --new -l 250 -f 311.1 -D 100 --new -l 25 -f 466.2 -D 100 --new -l 700 -f 392 -D 100 --new -l 350 -f 784 -D 100 --new -l 250 -f 392 -D 100 --new -l 25 -f 392 -D 100 --new -l 350 -f 784 -D 100 --new -l 250 -f 739.98 -D 100 --new -l 25 -f 698.46 -D 100 --new -l 25 -f 659.26 -D 100 --new -l 25 -f 622.26 -D 100 --new -l 50 -f 659.26 -D 400 --new -l 25 -f 415.3 -D 200 --new -l 350 -f 554.36 -D 100 --new -l 250 -f 523.25 -D 100 --new -l 25 -f 493.88 -D 100 --new -l 25 -f 466.16 -D 100 --new -l 25 -f 440 -D 100 --new -l 50 -f 466.16 -D 400 --new -l 25 -f 311.13 -D 200 --new -l 350 -f 369.99 -D 100 --new -l 250 -f 311.13 -D 100 --new -l 25 -f 392 -D 100 --new -l 350 -f 466.16 -D 100 --new -l 250 -f 392 -D 100 --new -l 25 -f 466.16 -D 100 --new -l 700 -f 587.32 -D 100 --new -l 350 -f 784 -D 100 --new -l 250 -f 392 -D 100 --new -l 25 -f 392 -D 100 --new -l 350 -f 784 -D 100 --new -l 250 -f 739.98 -D 100 --new -l 25 -f 698.46 -D 100 --new -l 25 -f 659.26 -D 100 --new -l 25 -f 622.26 -D 100 --new -l 50 -f 659.26 -D 400 --new -l 25 -f 415.3 -D 200 --new -l 350 -f 554.36 -D 100 --new -l 250 -f 523.25 -D 100 --new -l 25 -f 493.88 -D 100 --new -l 25 -f 466.16 -D 100 --new -l 25 -f 440 -D 100 --new -l 50 -f 466.16 -D 400 --new -l 25 -f 311.13 -D 200 --new -l 350 -f 392 -D 100 --new -l 250 -f 311.13 -D 100 --new -l 25 -f 466.16 -D 100 --new -l 300 -f 392.00 -D 150 --new -l 250 -f 311.13 -D 100 --new -l 25 -f 466.16 -D 100 --new -l 700 -f 392 &"
