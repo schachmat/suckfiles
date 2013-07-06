@@ -227,3 +227,10 @@ endif
 " set colorscheme
 se t_Co=16
 colorscheme solarized
+
+" ===============
+" PLUGIN Settings
+" ===============
+
+" Fix ToggleBG function from vim-colors-solarized
+call togglebg#map("")
