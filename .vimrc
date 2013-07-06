@@ -57,6 +57,20 @@ set incsearch			" do incremental searching
 " KEYBINDINGS
 " ===========
 
+" Use map leader to get a second keyboard
+let mapleader="ß"
+
+" conveniency is king
+map <leader>l <c-w><up>
+map <leader>a <c-w><down>
+map <leader>i <c-w><left>
+map <leader>e <c-w><right>
+
+map <leader>w :up<cr>
+map <leader>x :up<bar>bd<cr>
+map <leader>c :bd<cr>
+map <leader>q :q<cr>
+
 " Don't use Ex mode, use Q for formatting
 vmap Q gq
 nmap Q gqap
