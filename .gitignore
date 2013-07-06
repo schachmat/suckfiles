@@ -1,4 +1,6 @@
 # do not list any not yet tracked files except in the specified folders:
+*~
+*.swp
 /*
 !bin/
 !.vim
