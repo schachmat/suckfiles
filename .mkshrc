@@ -1,3 +1,4 @@
+# vim: set filetype=sh :
 ##########################################
 #  GENERAL  ##############################
 ##########################################
@@ -11,8 +12,9 @@ export PATH="~/bin:/usr/local/bin:$PATH"
 [ -z "$PS1" ] && return
 
 # Language
-#export LANG="de_DE.UTF-8"
-#export LC_ALL="de_DE.UTF-8"
+export LANGUAGE="en"
+export LANG="en_US.UTF-8"
+export LC_ALL="en_US.UTF-8"
 
 # History
 export HISTFILE=$HOME/.mksh_history
