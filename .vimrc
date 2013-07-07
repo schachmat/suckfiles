@@ -34,6 +34,9 @@ set tw=80
 set wrap
 set fo-=t
 
+" always keep x lines visible above and below the cursor
+set scrolloff=3
+
 " set max tab count
 set tabpagemax=25
 
@@ -77,6 +80,7 @@ nmap Q gqap
 
 " visually select the last edited/pasted text
 nmap gV `[v`]
+nmap gbV `[<c-v>`]
 
 " make Y behave like other capitals
 map Y y$
