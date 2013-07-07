@@ -28,3 +28,9 @@
 	branch = master
 	update = merge
 	ignore = untracked
+[submodule ".vim/bundle/vim-unimpaired"]
+	path = .vim/bundle/vim-unimpaired
+	url = git://github.com/tpope/vim-unimpaired.git
+	branch = master
+	update = merge
+	ignore = untracked
