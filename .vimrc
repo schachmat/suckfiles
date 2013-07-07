@@ -257,3 +257,7 @@ colorscheme solarized
 
 " Fix ToggleBG function from vim-colors-solarized
 call togglebg#map("")
+
+" Set max McCabe complexity and linelength for python
+let g:flake8_max_complexity=10
+let g:flake8_max_line_length=80
