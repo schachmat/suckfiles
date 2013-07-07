@@ -69,10 +69,15 @@ map <leader>a <c-w><down>
 map <leader>i <c-w><left>
 map <leader>e <c-w><right>
 
+" file write and close operations
 map <leader>w :up<cr>
 map <leader>x :up<bar>bd<cr>
 map <leader>c :bd<cr>
 map <leader>q :q<cr>
+map <leader>Q :qa<cr>
+
+" fuGITive shortcuts
+map <leader>gs :Gstatus<cr>
 
 " Don't use Ex mode, use Q for formatting
 vmap Q gq
