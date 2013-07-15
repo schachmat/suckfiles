@@ -6,7 +6,7 @@
 umask 022
 
 # include local ~/bin dir to PATH
-export PATH="~/bin:/usr/local/bin:$PATH"
+export PATH="$PATH/bin:/usr/local/bin:$PATH"
 
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
