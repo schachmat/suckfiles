@@ -44,6 +44,8 @@ export SVN_EDITOR=vim
 #use vim as epic man pager
 export MANPAGER="/bin/sh -c \"col -b -x | vim -c 'setlocal ft=man nomod nolist nonu noma' -c 'map <buffer> q :q<CR>' -c 'map <buffer> d <C-D>' -c 'map <buffer> u <C-U>' -\""
 
+# allow core dump generation
+ulimit -c unlimited
 
 
 ##########################################
