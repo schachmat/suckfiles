@@ -5,8 +5,7 @@
 
 umask 022
 
-# include local ~/bin dir to PATH
-export PATH="$PATH/bin:/usr/local/bin:$PATH"
+export PATH="$HOME/bin:$HOME/code/go/bin:/usr/local/bin:$PATH"
 
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
@@ -46,6 +45,9 @@ export MANPAGER="/bin/sh -c \"col -b -x | vim -c 'setlocal ft=man nomod nolist n
 
 # allow core dump generation
 ulimit -c unlimited
+
+# golang development worspace
+export GOPATH="$HOME/code/go"
 
 
 ##########################################
