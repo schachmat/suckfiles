@@ -85,7 +85,6 @@ alias la="ls -laF$COLOUR"
 alias ll="ls -lBhF$COLOUR"
 alias lnew="ls -AlhtrF$COLOUR"
 alias lsize="ls -laBhFrS$COLOUR"
-#alias ls="ls$COLOUR"
 alias suckfiles="git --git-dir=$HOME/code/suckfiles/.git --work-tree=$HOME"
 
 alias egrep="egrep$COLOUR"
