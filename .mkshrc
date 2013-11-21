@@ -29,7 +29,7 @@ bind '=clear-screen'          # Clear the screen with <C-l>
 #  PROMPT  ###############################
 ##########################################
 
-PS1='$(slcp)'
+PS1='$(slcp $COLUMNS $?)'
 
 
 
